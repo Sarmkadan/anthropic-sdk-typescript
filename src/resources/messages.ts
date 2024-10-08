@@ -8,8 +8,6 @@ import { Stream } from '../streaming';
 
 export class Messages extends APIResource {
   /**
-   * Create a Message.
-   *
    * Send a structured list of input messages with text and/or image content, and the
    * model will generate the next message in the conversation.
    *
