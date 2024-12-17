@@ -1,12 +1,15 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+export * from './shared';
 export {
   Beta,
   type AnthropicBeta,
   type BetaAPIError,
   type BetaAuthenticationError,
+  type BetaBillingError,
   type BetaError,
   type BetaErrorResponse,
+  type BetaGatewayTimeoutError,
   type BetaInvalidRequestError,
   type BetaNotFoundError,
   type BetaOverloadedError,
@@ -22,11 +25,14 @@ export {
 } from './completions';
 export {
   Messages,
+  type Base64PDFSource,
+  type CacheControlEphemeral,
   type ContentBlock,
   type ContentBlockDeltaEvent,
   type ContentBlockParam,
   type ContentBlockStartEvent,
   type ContentBlockStopEvent,
+  type DocumentBlockParam,
   type ImageBlockParam,
   type InputJsonDelta,
   type InputJSONDelta,
@@ -38,6 +44,7 @@ export {
   type MessageStopEvent,
   type MessageStreamEvent,
   type MessageStreamParams,
+  type MessageTokensCount,
   type Metadata,
   type Model,
   type RawContentBlockDeltaEvent,
@@ -62,4 +69,6 @@ export {
   type MessageCreateParams,
   type MessageCreateParamsNonStreaming,
   type MessageCreateParamsStreaming,
-} from './messages';
+  type MessageCountTokensParams,
+} from './messages/messages';
+export { ModelInfosPage, Models, type ModelInfo, type ModelListParams } from './models';
