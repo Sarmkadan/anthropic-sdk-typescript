@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../../resource';
-import * as MessagesAPI from '../../messages';
 import * as BetaAPI from '../beta';
+import * as MessagesAPI from '../../messages/messages';
 import * as MessagesMessagesAPI from './messages';
 import { APIPromise } from '../../../api-promise';
 import { Page, type PageParams, PagePromise } from '../../../pagination';
