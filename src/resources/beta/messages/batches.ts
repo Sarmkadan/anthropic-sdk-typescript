@@ -3,8 +3,8 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as MessagesAPI from '../../messages';
 import * as BetaAPI from '../beta';
+import * as MessagesAPI from '../../messages/messages';
 import * as MessagesMessagesAPI from './messages';
 import { Page, type PageParams } from '../../../pagination';
 import { type Response } from '../../../_shims/index';
