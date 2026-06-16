@@ -1,12 +1,10 @@
-# <img src=".github/logo.svg" alt="" width="32"> Claude SDK for TypeScript
+# Claude SDK for TypeScript
 
 [![NPM version](https://img.shields.io/npm/v/@anthropic-ai/sdk.svg)](https://npmjs.org/package/@anthropic-ai/sdk)
+![Build](https://github.com/sarmkadan/anthropic-sdk-typescript/actions/workflows/ci.yml/badge.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-The Claude SDK for TypeScript provides access to the [Claude API](https://docs.anthropic.com/en/api/) from server-side TypeScript or JavaScript applications.
-
-## Documentation
-
-Full documentation is available at **[platform.claude.com/docs/en/api/sdks/typescript](https://platform.claude.com/docs/en/api/sdks/typescript)**.
+The Claude SDK for TypeScript provides access to the Claude API from server-side TypeScript or JavaScript applications.
 
 ## Installation
 
@@ -14,32 +12,30 @@ Full documentation is available at **[platform.claude.com/docs/en/api/sdks/types
 npm install @anthropic-ai/sdk
 ```
 
-## Getting started
+## Quick Start
 
 ```js
 import Anthropic from '@anthropic-ai/sdk';
 
 const client = new Anthropic({
-  apiKey: process.env['ANTHROPIC_API_KEY'], // This is the default and can be omitted
+  apiKey: process.env['ANTHROPIC_API_KEY'],
 });
 
 const message = await client.messages.create({
   max_tokens: 1024,
   messages: [{ role: 'user', content: 'Hello, Claude' }],
-  model: 'claude-opus-4-6',
+  model: 'claude-3-opus-20240229',
 });
 
 console.log(message.content);
 ```
 
-## Requirements
+## Configuration
 
-Node.js 18+
-
-## Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md).
+The client can be configured via constructor options or environment variables.
+- `ANTHROPIC_API_KEY`: API key for authentication.
+- `ANTHROPIC_BASE_URL`: Override the default API base URL.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
