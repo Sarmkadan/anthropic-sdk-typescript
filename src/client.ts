@@ -288,10 +288,14 @@ type InternalClientOptions = ClientOptions & {
 
 export type ApiKeySetter = () => Promise<string>;
 
+/**
+ * @summary Options for configuring the Anthropic API client.
+ */
 export interface ClientOptions {
   /**
    * API key used for authentication.
    *
+   * @param apiKey API key used for authentication.
    * - Accepts either a static string or an async function that resolves to a string.
    * - Defaults to process.env['ANTHROPIC_API_KEY'].
    * - When a function is provided, it is invoked before each request so you can rotate
@@ -303,13 +307,14 @@ export interface ClientOptions {
   apiKey?: string | ApiKeySetter | null | undefined;
 
   /**
-   * Defaults to process.env['ANTHROPIC_AUTH_TOKEN'].
+   * @param authToken Defaults to process.env['ANTHROPIC_AUTH_TOKEN'].
    */
   authToken?: string | null | undefined;
 
   /**
    * An {@link AccessTokenProvider} for OAuth/workload-identity authentication.
    *
+   * @param credentials An {@link AccessTokenProvider} for OAuth/workload-identity authentication.
    * When set, the provider is wrapped in a {@link TokenCache} and used for
    * Bearer token auth on every request. Takes precedence over `authToken`
    * but not `apiKey`.
@@ -325,6 +330,7 @@ export interface ClientOptions {
    * bypassing config-file and environment-variable lookup. This is the
    * TypeScript equivalent of Go's `option.WithConfig(cfg)`.
    *
+   * @param config An {@link AnthropicConfig} object to resolve credentials from directly.
    * Ignored when `credentials` is set. For `oidc_federation`, the SDK
    * performs the jwt-bearer exchange in-process; for `user_oauth`,
    * `authentication.credentials_path` must point at the credentials file.
@@ -334,6 +340,7 @@ export interface ClientOptions {
   /**
    * Name of a profile to load from `<config_dir>/configs/<profile>.json`.
    *
+   * @param profile Name of a profile to load from `<config_dir>/configs/<profile>.json`.
    * Equivalent to setting the `ANTHROPIC_PROFILE` environment variable, but
    * scoped to this client instance. As an explicit constructor argument it
    * takes precedence over `ANTHROPIC_API_KEY` / `ANTHROPIC_AUTH_TOKEN` in the
@@ -343,12 +350,14 @@ export interface ClientOptions {
 
   /**
    * Defaults to process.env['ANTHROPIC_WEBHOOK_SIGNING_KEY'].
+   * @param webhookKey Signing key for webhooks.
    */
   webhookKey?: string | null | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
+   * @param baseURL Base URL for the API.
    * Defaults to process.env['ANTHROPIC_BASE_URL'].
    */
   baseURL?: string | null | undefined;
@@ -360,12 +369,15 @@ export interface ClientOptions {
    * Note that request timeouts are retried by default, so in a worst-case scenario you may wait
    * much longer than this timeout before the promise succeeds or fails.
    *
-   * @unit milliseconds
+   * @param timeout Timeout in milliseconds.
+   * @returns {number} Timeout in milliseconds.
    */
   timeout?: number | undefined;
   /**
    * Additional `RequestInit` options to be passed to `fetch` calls.
    * Properties will be overridden by per-request `fetchOptions`.
+   *
+   * @param fetchOptions Fetch options.
    */
   fetchOptions?: MergedRequestInit | undefined;
 
@@ -373,6 +385,7 @@ export interface ClientOptions {
    * Specify a custom `fetch` function implementation.
    *
    * If not provided, we expect that `fetch` is defined globally.
+   * @param fetch Custom fetch implementation.
    */
   fetch?: Fetch | undefined;
 
@@ -380,6 +393,7 @@ export interface ClientOptions {
    * The maximum number of times that the client will retry a request in case of a
    * temporary failure, like a network error or a 5XX error from the server.
    *
+   * @param maxRetries Maximum retries.
    * @default 2
    */
   maxRetries?: number | undefined;
@@ -387,6 +401,7 @@ export interface ClientOptions {
   /**
    * Default headers to include with every request to the API.
    *
+   * @param defaultHeaders Default headers.
    * These can be removed in individual requests by explicitly setting the
    * header to `null` in request options.
    */
@@ -395,6 +410,7 @@ export interface ClientOptions {
   /**
    * Default query parameters to include with every request to the API.
    *
+   * @param defaultQuery Default query parameters.
    * These can be removed in individual requests by explicitly setting the
    * param to `undefined` in request options.
    */
@@ -403,12 +419,14 @@ export interface ClientOptions {
   /**
    * By default, client-side use of this library is not allowed, as it risks exposing your secret API credentials to attackers.
    * Only set this option to `true` if you understand the risks and have appropriate mitigations in place.
+   * @param dangerouslyAllowBrowser Allow usage in browser.
    */
   dangerouslyAllowBrowser?: boolean | undefined;
 
   /**
    * Set the log level.
    *
+   * @param logLevel Log level.
    * Defaults to process.env['ANTHROPIC_LOG'] or 'warn' if it isn't set.
    */
   logLevel?: LogLevel | undefined;
@@ -416,6 +434,7 @@ export interface ClientOptions {
   /**
    * Set the logger.
    *
+   * @param logger Logger implementation.
    * Defaults to globalThis.console.
    */
   logger?: Logger | undefined;
@@ -425,7 +444,7 @@ export const HUMAN_PROMPT = '\\n\\nHuman:';
 export const AI_PROMPT = '\\n\\nAssistant:';
 
 /**
- * Base class for Anthropic API clients.
+ * @summary Base class for Anthropic API clients.
  */
 export class BaseAnthropic {
   apiKey: string | null;
@@ -436,6 +455,9 @@ export class BaseAnthropic {
    * The active credential provider. Default credential resolution runs once
    * at construction time. If it fails, the error is surfaced on every
    * request and the client must be reconstructed — there is no retry path.
+   *
+   * @summary Get the active credential provider.
+   * @returns {AccessTokenProvider | null} The active credential provider.
    *
    * Clones returned by {@link withOptions} share the parent's auth state
    * (provider, token cache, pending resolution, and any resolution error)
@@ -464,17 +486,7 @@ export class BaseAnthropic {
   /**
    * API Client for interfacing with the Anthropic API.
    *
-   * @param {string | null | undefined} [opts.apiKey=process.env['ANTHROPIC_API_KEY'] ?? null]
-   * @param {string | null | undefined} [opts.authToken=process.env['ANTHROPIC_AUTH_TOKEN'] ?? null]
-   * @param {string | null | undefined} [opts.webhookKey=process.env['ANTHROPIC_WEBHOOK_SIGNING_KEY'] ?? null]
-   * @param {string} [opts.baseURL=process.env['ANTHROPIC_BASE_URL'] ?? https://api.anthropic.com] - Override the default base URL for the API.
-   * @param {number} [opts.timeout=10 minutes] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
-   * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
-   * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
-   * @param {number} [opts.maxRetries=2] - The maximum number of times the client will retry a request.
-   * @param {HeadersLike} opts.defaultHeaders - Default headers to include with every request to the API.
-   * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
-   * @param {boolean} [opts.dangerouslyAllowBrowser=false] - By default, client-side use of this library is not allowed, as it risks exposing your secret API credentials to attackers.
+   * @param {ClientOptions} opts - Options for configuring the client.
    */
   constructor({
     baseURL = readEnv('ANTHROPIC_BASE_URL'),
@@ -1420,7 +1432,7 @@ export class BaseAnthropic {
 }
 
 /**
- * API Client for interfacing with the Anthropic API.
+ * @summary API Client for interfacing with the Anthropic API.
  */
 export class Anthropic extends BaseAnthropic {
   completions: API.Completions = new API.Completions(this);
