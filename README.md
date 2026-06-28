@@ -36,6 +36,10 @@ The client can be configured via constructor options or environment variables.
 - `ANTHROPIC_API_KEY`: API key for authentication.
 - `ANTHROPIC_BASE_URL`: Override the default API base URL.
 
+## Usage Examples
+
+For examples of how to use the API (including C# conceptual examples), please see the [examples/](examples/) directory.
+
 ## License
 
 This project is licensed under the MIT License.
