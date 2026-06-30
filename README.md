@@ -40,6 +40,29 @@ The client can be configured via constructor options or environment variables.
 
 For examples of how to use the API (including C# conceptual examples), please see the [examples/](examples/) directory.
 
+## Docker
+
+You can use the provided Docker configuration to build and work with the SDK in a containerized environment.
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Usage
+
+To build and run the development container:
+
+```sh
+docker-compose up -d
+```
+
+To run commands inside the container:
+
+```sh
+docker-compose exec sdk yarn test
+```
+
 ## License
 
 This project is licensed under the MIT License.
