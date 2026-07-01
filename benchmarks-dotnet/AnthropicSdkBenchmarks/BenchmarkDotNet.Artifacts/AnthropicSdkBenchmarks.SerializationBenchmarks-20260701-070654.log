@@ -1,0 +1,184 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="/home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/" /p:OutDir="/home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/bin/Release/net10.0/" /p:OutputPath="/home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/bin/Release/net10.0/" /p:PublishDir="/home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/publish/" in /home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1
+// command took 1.53 sec and exited with 0
+// start dotnet  build -c Release --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true /p:ArtifactsPath="/home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/" /p:OutDir="/home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/bin/Release/net10.0/" /p:OutputPath="/home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/bin/Release/net10.0/" /p:PublishDir="/home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/publish/" --output "/home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/bin/Release/net10.0/" in /home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1
+// command took 5.7 sec and exited with 0
+// ***** Done, took 00:00:07 (7.3 sec)   *****
+// Found 1 benchmarks:
+//   SerializationBenchmarks.SerializeRequest: DefaultJob
+
+// **************************
+// Benchmark: SerializationBenchmarks.SerializeRequest: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet AnthropicSdkBenchmarks-DefaultJob-1.dll --anonymousPipes 117 118 --benchmarkName AnthropicSdkBenchmarks.SerializationBenchmarks.SerializeRequest --job Default --benchmarkId 0 in /home/redrocket/task-factory/workdir/anthropic-sdk-typescript/benchmarks-dotnet/AnthropicSdkBenchmarks/bin/Release/net10.0/AnthropicSdkBenchmarks-DefaultJob-1/bin/Release/net10.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.15.8
+// Runtime=.NET 10.0.8 (10.0.8, 10.0.826.23019), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 258002.00 ns, 258.0020 us/op
+WorkloadJitting  1: 1 op, 34955935.00 ns, 34.9559 ms/op
+
+WorkloadPilot    1: 2 op, 139992.00 ns, 69.9960 us/op
+WorkloadPilot    2: 3 op, 34934.00 ns, 11.6447 us/op
+WorkloadPilot    3: 4 op, 20318.00 ns, 5.0795 us/op
+WorkloadPilot    4: 5 op, 21140.00 ns, 4.2280 us/op
+WorkloadPilot    5: 6 op, 23003.00 ns, 3.8338 us/op
+WorkloadPilot    6: 7 op, 38612.00 ns, 5.5160 us/op
+WorkloadPilot    7: 8 op, 43913.00 ns, 5.4891 us/op
+WorkloadPilot    8: 9 op, 34323.00 ns, 3.8137 us/op
+WorkloadPilot    9: 10 op, 44043.00 ns, 4.4043 us/op
+WorkloadPilot   10: 11 op, 52960.00 ns, 4.8145 us/op
+WorkloadPilot   11: 12 op, 36839.00 ns, 3.0699 us/op
+WorkloadPilot   12: 13 op, 48872.00 ns, 3.7594 us/op
+WorkloadPilot   13: 14 op, 58388.00 ns, 4.1706 us/op
+WorkloadPilot   14: 15 op, 50676.00 ns, 3.3784 us/op
+WorkloadPilot   15: 16 op, 46407.00 ns, 2.9004 us/op
+WorkloadPilot   16: 32 op, 108544.00 ns, 3.3920 us/op
+WorkloadPilot   17: 64 op, 113693.00 ns, 1.7765 us/op
+WorkloadPilot   18: 128 op, 210433.00 ns, 1.6440 us/op
+WorkloadPilot   19: 256 op, 749754.00 ns, 2.9287 us/op
+WorkloadPilot   20: 512 op, 1483255.00 ns, 2.8970 us/op
+WorkloadPilot   21: 1024 op, 2581972.00 ns, 2.5215 us/op
+WorkloadPilot   22: 2048 op, 5169575.00 ns, 2.5242 us/op
+WorkloadPilot   23: 4096 op, 7537788.00 ns, 1.8403 us/op
+WorkloadPilot   24: 8192 op, 11972709.00 ns, 1.4615 us/op
+WorkloadPilot   25: 16384 op, 23816986.00 ns, 1.4537 us/op
+WorkloadPilot   26: 32768 op, 45151817.00 ns, 1.3779 us/op
+WorkloadPilot   27: 65536 op, 121830290.00 ns, 1.8590 us/op
+WorkloadPilot   28: 131072 op, 255030120.00 ns, 1.9457 us/op
+WorkloadPilot   29: 262144 op, 197919842.00 ns, 755.0043 ns/op
+WorkloadPilot   30: 524288 op, 305692803.00 ns, 583.0627 ns/op
+WorkloadPilot   31: 1048576 op, 573728983.00 ns, 547.1506 ns/op
+
+WorkloadWarmup   1: 1048576 op, 558330393.00 ns, 532.4654 ns/op
+WorkloadWarmup   2: 1048576 op, 569943900.00 ns, 543.5409 ns/op
+WorkloadWarmup   3: 1048576 op, 591884725.00 ns, 564.4653 ns/op
+WorkloadWarmup   4: 1048576 op, 604798884.00 ns, 576.7812 ns/op
+WorkloadWarmup   5: 1048576 op, 588608373.00 ns, 561.3407 ns/op
+WorkloadWarmup   6: 1048576 op, 589380308.00 ns, 562.0769 ns/op
+WorkloadWarmup   7: 1048576 op, 609612254.00 ns, 581.3715 ns/op
+WorkloadWarmup   8: 1048576 op, 603440792.00 ns, 575.4860 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 1048576 op, 592201898.00 ns, 564.7677 ns/op
+WorkloadActual   2: 1048576 op, 588937979.00 ns, 561.6550 ns/op
+WorkloadActual   3: 1048576 op, 605524102.00 ns, 577.4728 ns/op
+WorkloadActual   4: 1048576 op, 571206575.00 ns, 544.7450 ns/op
+WorkloadActual   5: 1048576 op, 563940265.00 ns, 537.8153 ns/op
+WorkloadActual   6: 1048576 op, 620066945.00 ns, 591.3419 ns/op
+WorkloadActual   7: 1048576 op, 604616508.00 ns, 576.6072 ns/op
+WorkloadActual   8: 1048576 op, 578948657.00 ns, 552.1285 ns/op
+WorkloadActual   9: 1048576 op, 587369117.00 ns, 560.1588 ns/op
+WorkloadActual  10: 1048576 op, 582979050.00 ns, 555.9721 ns/op
+WorkloadActual  11: 1048576 op, 590546905.00 ns, 563.1894 ns/op
+WorkloadActual  12: 1048576 op, 574340702.00 ns, 547.7340 ns/op
+WorkloadActual  13: 1048576 op, 593169031.00 ns, 565.6901 ns/op
+WorkloadActual  14: 1048576 op, 587012601.00 ns, 559.8188 ns/op
+WorkloadActual  15: 1048576 op, 610945524.00 ns, 582.6431 ns/op
+WorkloadActual  16: 1048576 op, 612166899.00 ns, 583.8078 ns/op
+WorkloadActual  17: 1048576 op, 572687477.00 ns, 546.1573 ns/op
+WorkloadActual  18: 1048576 op, 582037076.00 ns, 555.0738 ns/op
+WorkloadActual  19: 1048576 op, 591966041.00 ns, 564.5428 ns/op
+WorkloadActual  20: 1048576 op, 591714320.00 ns, 564.3027 ns/op
+WorkloadActual  21: 1048576 op, 597894726.00 ns, 570.1968 ns/op
+WorkloadActual  22: 1048576 op, 586543381.00 ns, 559.3714 ns/op
+
+// AfterActualRun
+WorkloadResult   1: 1048576 op, 592201898.00 ns, 564.7677 ns/op
+WorkloadResult   2: 1048576 op, 588937979.00 ns, 561.6550 ns/op
+WorkloadResult   3: 1048576 op, 605524102.00 ns, 577.4728 ns/op
+WorkloadResult   4: 1048576 op, 571206575.00 ns, 544.7450 ns/op
+WorkloadResult   5: 1048576 op, 563940265.00 ns, 537.8153 ns/op
+WorkloadResult   6: 1048576 op, 604616508.00 ns, 576.6072 ns/op
+WorkloadResult   7: 1048576 op, 578948657.00 ns, 552.1285 ns/op
+WorkloadResult   8: 1048576 op, 587369117.00 ns, 560.1588 ns/op
+WorkloadResult   9: 1048576 op, 582979050.00 ns, 555.9721 ns/op
+WorkloadResult  10: 1048576 op, 590546905.00 ns, 563.1894 ns/op
+WorkloadResult  11: 1048576 op, 574340702.00 ns, 547.7340 ns/op
+WorkloadResult  12: 1048576 op, 593169031.00 ns, 565.6901 ns/op
+WorkloadResult  13: 1048576 op, 587012601.00 ns, 559.8188 ns/op
+WorkloadResult  14: 1048576 op, 610945524.00 ns, 582.6431 ns/op
+WorkloadResult  15: 1048576 op, 612166899.00 ns, 583.8078 ns/op
+WorkloadResult  16: 1048576 op, 572687477.00 ns, 546.1573 ns/op
+WorkloadResult  17: 1048576 op, 582037076.00 ns, 555.0738 ns/op
+WorkloadResult  18: 1048576 op, 591966041.00 ns, 564.5428 ns/op
+WorkloadResult  19: 1048576 op, 591714320.00 ns, 564.3027 ns/op
+WorkloadResult  20: 1048576 op, 597894726.00 ns, 570.1968 ns/op
+WorkloadResult  21: 1048576 op, 586543381.00 ns, 559.3714 ns/op
+// GC:  68 0 0 570425344 1048576
+// Threading:  0 0 1048576
+
+// AfterAll
+// Benchmark Process 2617735 has exited with code 0.
+
+Mean = 561.612 ns, StdErr = 2.667 ns (0.47%), N = 21, StdDev = 12.221 ns
+Min = 537.815 ns, Q1 = 555.074 ns, Median = 561.655 ns, Q3 = 565.690 ns, Max = 583.808 ns
+IQR = 10.616 ns, LowerFence = 539.149 ns, UpperFence = 581.614 ns
+ConfidenceInterval = [551.346 ns; 571.878 ns] (CI 99.9%), Margin = 10.266 ns (1.83% of Mean)
+Skewness = 0.06, Kurtosis = 2.27, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-07-01 7:07 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/AnthropicSdkBenchmarks.SerializationBenchmarks-report.csv
+  BenchmarkDotNet.Artifacts/results/AnthropicSdkBenchmarks.SerializationBenchmarks-report-github.md
+  BenchmarkDotNet.Artifacts/results/AnthropicSdkBenchmarks.SerializationBenchmarks-report.html
+
+// * Detailed results *
+SerializationBenchmarks.SerializeRequest: DefaultJob
+Runtime = .NET 10.0.8 (10.0.8, 10.0.826.23019), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 561.612 ns, StdErr = 2.667 ns (0.47%), N = 21, StdDev = 12.221 ns
+Min = 537.815 ns, Q1 = 555.074 ns, Median = 561.655 ns, Q3 = 565.690 ns, Max = 583.808 ns
+IQR = 10.616 ns, LowerFence = 539.149 ns, UpperFence = 581.614 ns
+ConfidenceInterval = [551.346 ns; 571.878 ns] (CI 99.9%), Margin = 10.266 ns (1.83% of Mean)
+Skewness = 0.06, Kurtosis = 2.27, MValue = 2
+-------------------- Histogram --------------------
+[532.001 ns ; 554.568 ns) | @@@@@
+[554.568 ns ; 566.196 ns) | @@@@@@@@@@@
+[566.196 ns ; 586.021 ns) | @@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.15.8, Linux Ubuntu 26.04 LTS (Resolute Raccoon)
+AMD EPYC-Rome Processor 2.45GHz, 1 CPU, 16 logical and 16 physical cores
+.NET SDK 10.0.300
+  [Host]     : .NET 10.0.8 (10.0.8, 10.0.826.23019), X64 RyuJIT x86-64-v3
+  DefaultJob : .NET 10.0.8 (10.0.8, 10.0.826.23019), X64 RyuJIT x86-64-v3
+
+
+| Method           | Mean     | Error    | StdDev   | Gen0   | Allocated |
+|----------------- |---------:|---------:|---------:|-------:|----------:|
+| SerializeRequest | 561.6 ns | 10.27 ns | 12.22 ns | 0.0648 |     544 B |
+
+// * Hints *
+Outliers
+  SerializationBenchmarks.SerializeRequest: Default -> 1 outlier  was  removed (591.34 ns)
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Gen0      : GC Generation 0 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ns      : 1 Nanosecond (0.000000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:20 (20.23 sec), executed benchmarks: 1
+
+Global total time: 00:00:27 (27.65 sec), executed benchmarks: 1
+// * Artifacts cleanup *
+Artifacts cleanup is finished
