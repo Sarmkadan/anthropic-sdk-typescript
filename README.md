@@ -63,6 +63,26 @@ To run commands inside the container:
 docker-compose exec sdk yarn test
 ```
 
+## Performance Benchmarks
+
+This project includes performance benchmarks using [BenchmarkDotNet](https://benchmarkdotnet.org/) to measure the performance of critical operations.
+
+### Running Benchmarks
+
+1. Install [.NET SDK](https://dotnet.microsoft.com/download)
+2. Navigate to `benchmarks-dotnet/AnthropicSdkBenchmarks/`
+3. Run the benchmarks:
+
+```sh
+dotnet run -c Release
+```
+
+### Results
+
+| Method           | Mean     | Error    | StdDev   | Gen0   | Allocated |
+|----------------- |---------:|---------:|---------:|-------:|----------:|
+| SerializeRequest | 561.6 ns | 10.27 ns | 12.22 ns | 0.0648 |     544 B |
+
 ## License
 
 This project is licensed under the MIT License.
