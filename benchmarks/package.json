@@ -1,0 +1,31 @@
+{
+  "name": "@anthropic-ai/sdk-benchmarks",
+  "version": "0.1.0",
+  "description": "Performance benchmarks for the Anthropic SDK",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "bench:micro": "node dist/benchmarks/microbench.js",
+    "bench:throughput": "node dist/benchmarks/throughput.js",
+    "bench:all": "npm run bench:micro && npm run bench:throughput",
+    "bench:watch": "nodemon --watch src --exec \"npm run bench:all\"",
+    "format": "prettier --write --cache --cache-strategy metadata . !dist",
+    "lint": "eslint --ext ts,js ."
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "file:../",
+    "@types/node": "^20.17.6",
+    "@types/benchmark": "^2.1.5",
+    "autocannon": "^8.0.0",
+    "benchmark": "^2.1.5",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.0.0",
+    "tinybench": "^6.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
