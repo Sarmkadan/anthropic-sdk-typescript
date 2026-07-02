@@ -1,0 +1,4 @@
+{
+  "extends": ["../eslint.config.mjs"],
+  "ignorePatterns": ["dist", "node_modules"]
+}
