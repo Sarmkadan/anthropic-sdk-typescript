@@ -32,9 +32,111 @@ console.log(message.content);
 
 ## Configuration
 
-The client can be configured via constructor options or environment variables.
-- `ANTHROPIC_API_KEY`: API key for authentication.
-- `ANTHROPIC_BASE_URL`: Override the default API base URL.
+The Anthropic SDK for TypeScript can be configured in multiple ways:
+
+### Constructor Options
+
+All configuration options can be passed directly to the client constructor:
+
+```typescript
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: 'your-api-key-here',
+  baseURL: 'https://api.example.com/v1/',
+  timeout: 30000,
+  maxRetries: 3,
+  logLevel: 'info',
+  defaultHeaders: {
+    'X-Custom-Header': 'value'
+  },
+  defaultQuery: {
+    'custom_param': 'value'
+  }
+});
+```
+
+### Environment Variables
+
+You can also configure the client using environment variables:
+
+- `ANTHROPIC_API_KEY`: API key for authentication
+- `ANTHROPIC_BASE_URL`: Override the default API base URL
+- `ANTHROPIC_AUTH_TOKEN`: Auth token for OAuth authentication
+- `ANTHROPIC_WEBHOOK_SIGNING_KEY`: Signing key for webhooks
+- `ANTHROPIC_LOG`: Set the log level (debug, info, warn, error)
+- `ANTHROPIC_CUSTOM_HEADERS`: Custom headers in format `Header-Name: value` (one per line)
+
+### Configuration File (appsettings.json)
+
+For larger applications, you can use a configuration file:
+
+```json
+{
+  "anthropic": {
+    "apiKey": "your-api-key-here",
+    "baseUrl": "https://api.anthropic.com",
+    "timeout": 600000,
+    "maxRetries": 2,
+    "logLevel": "warn",
+    "dangerouslyAllowBrowser": false
+  }
+}
+```
+
+See [`appsettings.example.json`](appsettings.example.json) for a complete example with all available options.
+
+### Available Options
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `apiKey` | `string \| (() => Promise<string>) \| null` | `process.env['ANTHROPIC_API_KEY']` | API key for authentication |
+| `authToken` | `string \| null` | `process.env['ANTHROPIC_AUTH_TOKEN']` | Auth token for OAuth |
+| `credentials` | `any \| null` | `null` | AccessTokenProvider for OAuth/workload-identity |
+| `config` | `any \| null` | `null` | AnthropicConfig object for direct credential resolution |
+| `profile` | `string \| null` | `null` | Profile name to load from config files |
+| `webhookKey` | `string \| null` | `process.env['ANTHROPIC_WEBHOOK_SIGNING_KEY']` | Signing key for webhooks |
+| `baseURL` | `string \| null` | `"https://api.anthropic.com"` | Override the default API base URL |
+| `timeout` | `number` | `600000` (10 minutes) | Maximum time to wait for a response |
+| `maxRetries` | `number` | `2` | Maximum number of retry attempts |
+| `defaultHeaders` | `Record<string, string>` | `{}` | Default headers to include with every request |
+| `defaultQuery` | `Record<string, string \| undefined>` | `{}` | Default query parameters to include with every request |
+| `dangerouslyAllowBrowser` | `boolean` | `false` | Allow usage in browser environments |
+| `logLevel` | `LogLevel` | `'warn'` | Set the log level (debug, info, warn, error) |
+| `logger` | `Logger` | `console` | Custom logger implementation |
+| `fetchOptions` | `Record<string, unknown>` | `{}` | Additional RequestInit options for fetch |
+
+### Validation
+
+The SDK provides runtime validation for configuration options using Zod. You can validate your configuration:
+
+```typescript
+import { validateOptions, toClientOptions } from '@anthropic-ai/sdk/options';
+
+const config = {
+  apiKey: 'your-key',
+  timeout: 30000,
+  maxRetries: 5
+};
+
+const validated = validateOptions(config); // Throws if validation fails
+const clientOptions = toClientOptions(validated);
+
+const client = new Anthropic(clientOptions);
+```
+
+### TypeScript Support
+
+All configuration options are fully typed. The `ClientOptions` interface is exported for use in your applications:
+
+```typescript
+import type { ClientOptions } from '@anthropic-ai/sdk';
+
+const options: ClientOptions = {
+  apiKey: process.env.API_KEY,
+  timeout: 30000
+};
+```
 
 ## Usage Examples
 

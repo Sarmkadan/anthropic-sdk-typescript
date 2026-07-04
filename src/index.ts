@@ -6,6 +6,7 @@ export { type Uploadable, toFile } from './core/uploads';
 export { APIPromise } from './core/api-promise';
 export { BaseAnthropic, Anthropic, type ClientOptions, HUMAN_PROMPT, AI_PROMPT } from './client';
 export { PagePromise } from './core/pagination';
+export * from './options';
 export {
   AnthropicError,
   APIError,
