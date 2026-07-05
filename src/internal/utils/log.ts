@@ -13,6 +13,68 @@ export type Logger = {
 };
 export type LogLevel = 'off' | 'error' | 'warn' | 'info' | 'debug';
 
+/**
+ * Creates a structured logging wrapper that supports named parameters
+ * following Microsoft.Extensions.Logging conventions
+ */
+export class StructuredLogger {
+  /**
+   * Wraps a Logger to support structured logging with named parameters
+   * @param logger The base logger
+   * @returns A logger with structured logging support
+   */
+  static wrap(logger: Logger): Logger {
+    return {
+      error: (message: string, ...properties: unknown[]) => {
+        logger.error(message, ...properties);
+      },
+      warn: (message: string, ...properties: unknown[]) => {
+        logger.warn(message, ...properties);
+      },
+      info: (message: string, ...properties: unknown[]) => {
+        logger.info(message, ...properties);
+      },
+      debug: (message: string, ...properties: unknown[]) => {
+        logger.debug(message, ...properties);
+      },
+    };
+  }
+
+  /**
+   * Formats log message with structured properties
+   * @param message The log message with optional placeholders like {ItemId}
+   * @param properties Structured properties as name-value pairs
+   * @returns Formatted message with properties
+   */
+  static formatMessage(message: string, properties: Record<string, unknown>): string {
+    return message.replace(/\{(\w+)\}/g, (_, propName) => {
+      if (properties && hasOwn(properties, propName)) {
+        try {
+          return JSON.stringify(properties[propName]);
+        } catch {
+          return String(properties[propName]);
+        }
+      }
+      return '{' + propName + '}';
+    });
+  }
+
+  /**
+   * Logs a message with structured properties using Microsoft.Extensions.Logging style
+   * @param logger The logger to use
+   * @param level The log level
+   * @param message The message template with placeholders like "Processing {ItemId}"
+   * @param properties Structured properties as name-value pairs
+   */
+  static logWithProperties(logger: Logger, level: keyof Logger, message: string, properties: Record<string, unknown>): void {
+    if (logger[level]) {
+      logger[level](StructuredLogger.formatMessage(message, properties), properties);
+    }
+  }
+}
+
+export { StructuredLogger };
+
 const levelNumbers = {
   off: 0,
   error: 200,
