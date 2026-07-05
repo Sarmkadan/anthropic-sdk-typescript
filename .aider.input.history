@@ -52,3 +52,315 @@
 +- Do NOT mention Red Rocket or Amdaris anywhere
 +- Write natural commit messages
 +- Push to main when done
+
+# 2026-07-05 15:49:05.538208
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:49:05.538252
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:50:18.316753
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:50:18.316800
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:51:31.790224
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:51:31.790275
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:54:41.617510
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:54:41.617610
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:55:51.356187
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:55:51.356236
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:57:00.326571
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done
+
+# 2026-07-05 15:57:00.326646
++Add structured logging to sarmkadan/anthropic-sdk-typescript.
++Work in: /home/redrocket/task-factory/workdir/anthropic-sdk-typescript
++
++1. Ensure Microsoft.Extensions.Logging is used (add ILogger<T> injection if missing)
++2. Add meaningful log messages to key operations:
++   - LogInformation for successful operations
++   - LogWarning for recoverable issues
++   - LogError for failures (with exception)
++   - LogDebug for detailed flow info
++3. Use structured logging with named parameters: _logger.LogInformation("Processing {ItemId}", item.Id)
++4. Do NOT add logging to every single method - only key entry/exit points and error paths
++
++Commit as: "feat: add structured logging"
++
++Git config:
++  git config user.name "Vladyslav Zaiets"
++  git config user.email "rutova2@gmail.com"
++
++CRITICAL RULES:
++- Do NOT add Co-Authored-By headers
++- Do NOT mention AI, Claude, GPT, Copilot, generated, automated anywhere in code or commits
++- Do NOT mention Red Rocket or Amdaris anywhere
++- Write natural commit messages
++- Push to main when done

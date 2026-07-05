@@ -250,6 +250,8 @@ import {
   loggerFor,
   parseLogLevel,
 } from './internal/utils/log';
+import { LoggerFactory } from './internal/utils/logger-factory';
+import type { ILogger } from '@microsoft/fast-logger';
 import { isEmptyObj } from './internal/utils/values';
 
 /**
@@ -438,6 +440,7 @@ export interface ClientOptions {
    * Defaults to globalThis.console.
    */
   logger?: Logger | undefined;
+
 }
 
 export const HUMAN_PROMPT = '\\n\\nHuman:';
