@@ -10,3 +10,6 @@ dist-deno
 .idea/
 .eslintcache
 oidc
+
+# aider internal state - never commit
+.aider*
